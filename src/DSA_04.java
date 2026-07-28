@@ -1,40 +1,44 @@
 public class DSA_04 {
     // Quick Sort
-    public static void quicksort(int[] nums, int low, int high) {
-        if (low < high) {
-            int pi = partition(nums, low, high);
 
-            quicksort(nums, low, pi - 1);
-            quicksort(nums, pi + 1, high);
+    public static void quicksort(int[] arr, int left, int right){
+        if(left<right){
+
+            int pi = partition(arr, left, right);
+
+            quicksort(arr, left, pi-1);
+            quicksort(arr, pi+1, right);
+
 
         }
-
     }
 
-    private static int partition(int[] nums, int low, int high) {
-        int pivot = nums[high];
-        int i = low - 1;
-        for (int j = low; j < high; j++) {
-            if (nums[j] < pivot) {
+    public static int partition(int[] arr, int left, int right){
+        int pivot = arr[right];
+        int i = left - 1;
+        for (int j = left; j < right; j++){
+            if(arr[j] < pivot){
                 i++;
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
-        int temp = nums[i+1];
-        nums[i + 1] = nums[high];
-        nums[high] = temp;
+
+        int temp = arr[i+1];
+        arr[i+1] = arr[right];
+        arr[right] = temp;
         return i+1;
     }
 
     public static void main(String[] args) {
-        int[] nums = {9, 3, 1, 4, 2, 7};
+        int arr[] = {8,2,7,1,0,3,4,9,};
 
-        quicksort(nums, 0, nums.length - 1);
+        quicksort(arr, 0, arr.length-1);
 
-        for (int num : nums) {
-            System.out.print(num + " ");
+        for(int nums: arr){
+            System.out.print(nums + " ");
+            System.out.print(nums + " ");
         }
     }
 }
