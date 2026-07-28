@@ -38,7 +38,6 @@ public class DSA_04 {
 
         for(int nums: arr){
             System.out.print(nums + " ");
-            System.out.print(nums + " ");
         }
     }
 }
