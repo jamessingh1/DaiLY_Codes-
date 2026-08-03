@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+
 public class Linked_list {
     public static void main(String[] args) {
 
@@ -8,6 +8,7 @@ public class Linked_list {
         nums.add(2);
         nums.add(2);
         nums.addFirst(3);
+        nums.peek(2);
 
         System.out.println(nums);
     }
