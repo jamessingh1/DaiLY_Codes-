@@ -1,4 +1,3 @@
-import static java.util.Arrays.binarySearch;
 
 public class LinearS {
 
