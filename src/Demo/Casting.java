@@ -6,8 +6,9 @@ public class Casting {
 
     public static void main(String[] args){
 
-        byte c = 127;
+        byte c = 100;
 
+        
     int a = 789;
     byte b = (byte) a;
 
