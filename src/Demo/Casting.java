@@ -23,9 +23,19 @@ public class Casting {
 
     int result = y * z;
 
-    System.out.print(result + " ");
-    System.out.print(x + " ");
-    System.out.print(b + " ");
+    //System.out.print(result + " ");
+   // System.out.print(x + " ");
+   // System.out.print(b + " ");
+
+
+    //Post and Pre increment
+
+    int alpha = 786;
+    int ans = alpha++;
+    int output = ++alpha;
+
+    System.out.println(alpha);// to check post increment
+    System.out.println(output); // to check pre increment
 
   }  
 
