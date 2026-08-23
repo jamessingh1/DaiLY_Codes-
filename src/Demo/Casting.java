@@ -34,8 +34,27 @@ public class Casting {
     int ans = alpha++;
     int output = ++alpha;
 
-    System.out.println(alpha);// to check post increment
-    System.out.println(output); // to check pre increment
+    //System.out.println(alpha);// to check post increment
+    //System.out.println(output); // to check pre increment
+
+    //Comparison Operator
+
+    int j = 789;
+    int k = 587;
+    if(j==k){
+        System.out.println("true");
+
+    }
+
+    // Condition Statement
+
+    int s = 7;
+    int q = 5;
+    int r = 9;
+    int t = 5;
+
+    boolean soln = s > q || r < t;
+    System.out.println(soln);
 
   }  
 
