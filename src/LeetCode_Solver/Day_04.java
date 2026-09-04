@@ -4,7 +4,7 @@ public class Day_04 {
         int a = 7;
         int b = 9;
 
-        float x = 8;
+        char x = 8;
         float y = 8;
 
         boolean result = (a<b || x>y);
