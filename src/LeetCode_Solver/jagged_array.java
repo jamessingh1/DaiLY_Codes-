@@ -3,7 +3,7 @@ package LeetCode_Solver;
 public class jagged_array {
 //jagged_array
     public static void main(String args[]){
-        int arr[][] = new int[4][];
+        int[][] arr = new int[4][];
 
         arr[0] = new int[2];
         arr[1] = new int[4];
@@ -17,7 +17,7 @@ public class jagged_array {
         }
 
         for(int n[] : arr){
-            for(int m : n){
+            for(int m  : n){
                 System.out.print(m + " ");
             }
             System.out.println();
