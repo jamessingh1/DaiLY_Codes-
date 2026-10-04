@@ -16,22 +16,20 @@ class rectangle{
     }
 
     void areacalc(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the length of the rectangle: ");
-       this.length = sc.nextDouble();
-        System.out.println("Enter the breadth of the rectangle: ");
-        this.width = sc.nextDouble();
         double result = length * width;
-        System.out.println("\n The Area of the rectangle is: " + result);
-        
+        System.out.println("The area of the rectangle according to your dimension: " + result);
     }
     
 }
 
-
 public class lab01c{
     public static void main(String[] args) {
-    rectangle r = new rectangle();
+    Scanner sc = new Scanner(System.in);   
+    System.out.println("Enter the length of the rectangle: ");
+    double l = sc.nextDouble();
+    System.out.println("Enter the width of the rectangle: ");
+    double b = sc.nextDouble();
+    rectangle r = new rectangle(l,b);
     r.areacalc();    
     }
 }
