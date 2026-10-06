@@ -3,43 +3,33 @@
 
 struct node{
     int data;
-    struct node *next; 
+    struct node *next;
 };
 
+int main(){
+struct node *head, *second, *third, *fourth;
 
-int main() {
-    struct node *head = NULL;
-    struct node *newnode = (struct node*)malloc(sizeof(struct node));
-    newnode -> data = 99;
-    newnode -> next = NULL;
-    head = newnode;
+head = (struct node*)malloc(sizeof(struct node));
+second = (struct node*)malloc(sizeof(struct node));
+third = (struct node*)malloc(sizeof(struct node));
+fourth = (struct node*)malloc(sizeof(struct node));
 
-    struct node *first = (struct node*)malloc(sizeof(struct node));
+head -> data = 25;
+second -> data = 97;
+third -> data = 34;
+fourth -> data = 98;
 
-    first ->data = 2;
-    first ->next = NULL;
-   // head = first;
-    newnode -> next = first;
 
-    struct node *second = (struct node*)malloc(sizeof(struct node));
-    second ->data = 4;
-    second ->next = NULL;
+head -> next = second;
+second -> next = third;
+third -> next = fourth;
+fourth -> next = NULL;
 
-    first -> next = second;
+struct node *temp = head;
 
-    struct node *third = (struct node*)malloc(sizeof(struct node));
-    third -> data = 8;
-    third -> next = NULL;
-
-    second -> next = third;
-
-    struct node *temp = head;
-
-    while (temp != NULL) {
-        printf("%d -> ", temp ->data);
-        temp = temp->next;
-    }
-    printf("Null\n");
-    return 0;
-    
+while(temp != NULL){
+    printf("%d\n", temp-> data);
+    temp = temp -> next;
+}
+return 0;
 }
