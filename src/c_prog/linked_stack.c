@@ -7,16 +7,17 @@ struct node{
    struct node* next;
 };
 
-struct node* head = NULL;
-struct node* tail = NULL;
+struct node* top = NULL;
 
-struct node* createnode(int value){
+void push(int value){
     struct node* newnode = (struct node*)malloc(sizeof(struct node));
-    if (newnode == NULL){
-        printf("Insertion Failed!\n");
+    if(newnode == NULL){
+        printf("Stack Overflow!");
+        return;
     }
     newnode -> prev = NULL;
     newnode -> data = value;
-    newnode -> next = NULL;
+    newnode -> next = top;
     return newnode;
 }
+

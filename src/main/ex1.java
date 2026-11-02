@@ -1,23 +1,22 @@
-interface shape{
-    public void area();
+package main;
+class student {
+    String name;
+    int age;
+
+student(String name, int age){
+  this.name = name;
+  this.age = age;
 }
 
-class circle implements shape{
-    public circle(double radius){
-        this.radius = r;
-    }
+void display(){
+    System.out.println("Name: " + name);
+    System.out.println("Age: " + age);
 }
-
-class rectangle implements shape{
-    
 }
 
 public class ex1{
     public static void main(String[] args){
-       circle cir = new circle();
-       rectangle rec = new rectangle();
-
-       cir.area(4);
-       rec.area(20,30);
+        student s1 = new student("Akki",23);
+        s1.display();
     }
 }
