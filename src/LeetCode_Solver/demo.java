@@ -1,24 +1,34 @@
 package LeetCode_Solver;
 //import java.util.Scanner;
+import java.util.Arrays;
 
 public class demo {
     public static void main(String args[]){
-       int n = 121;
-       int original = n;
-       int rev = 0;
-        
+       int[] nums = {9,8,6,5,2,3};
+       int k = 2;
+       System.out.println(Arrays.toString(rotate(nums, k)));
 
-        while(n > 0){
-            int digit = n%10;
-            rev = rev * 10+digit;
-            n = n/10;
-        }
-        if(original==rev){
-            System.out.println("No.is Palindrome");
-        }
-        else{
-            System.out.println("No. is not a palindrome u mc!");
+    }
+
+    public static void reverse(int[] nums, int start, int end){
+        while(start<=end){
+            int temp = nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
+            start++;
+            end--;
+
         }
     }
+
+    public static int[] rotate(int[] nums, int k){
+        int n = nums.length;
+        reverse(nums,0,k-1);
+        reverse(nums,k,n-1);
+        reverse(nums,0,n-1);
+        return nums;
+    }
+
+
     
 }
