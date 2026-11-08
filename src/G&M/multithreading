@@ -1,0 +1,59 @@
+package main;
+
+class StudentRecord {
+    String name;
+    int regdNo;
+    String taskType;
+
+    public StudentRecord(String name, int regdNo, String taskType) {
+        this.name = name;
+        this.regdNo = regdNo;
+        this.taskType = taskType;
+    }
+}
+
+// Runnable task for concurrent processing
+class StudentTaskProcessor implements Runnable {
+    private StudentRecord student;
+
+    public StudentTaskProcessor(StudentRecord student) {
+        this.student = student;
+    }
+
+    @Override
+    public void run() {
+        // Displays thread name executing the task concurrently
+        String threadName = Thread.currentThread().getName();
+        System.out.println("[" + threadName + "] Started processing ID " + student.regdNo + " (" + student.name + ")");
+
+        try {
+            // Simulate processing delay (1 second)
+            Thread.sleep(1000); 
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrupted: " + e.getMessage());
+        }
+
+        System.out.println("[" + threadName + "] Completed task: " + student.taskType + " for " + student.name);
+    }
+}
+
+// Main Class
+public class MultithreadingDemo {
+    public static void main(String[] args) {
+        StudentRecord s1 = new StudentRecord("Alex", 101, "Calculating End-Sem Grade");
+        StudentRecord s2 = new StudentRecord("Ryan", 102, "Verifying Scholarship Eligibility");
+        StudentRecord s3 = new StudentRecord("Maya", 103, "Generating Fee Receipt");
+
+        System.out.println("=== Starting Multithreaded Processing ===");
+
+        // Create and start a new Thread for each student task
+        Thread t1 = new Thread(new StudentTaskProcessor(s1), "Thread-Alex");
+        Thread t2 = new Thread(new StudentTaskProcessor(s2), "Thread-Ryan");
+        Thread t3 = new Thread(new StudentTaskProcessor(s3), "Thread-Maya");
+
+        // Spawns tasks concurrently
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
